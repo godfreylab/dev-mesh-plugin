@@ -1,0 +1,6 @@
+# Local Claude Code settings (contains personal ADO org / credentials)
+.claude/settings.local.json
+
+# Node
+node_modules/
+dist/
