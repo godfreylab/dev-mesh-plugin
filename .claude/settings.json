@@ -4,5 +4,9 @@
       "name": "dev-mesh",
       "source": "./plugins/dev-mesh"
     }
+  ],
+  "enabledMcpjsonServers": [
+    "ado",
+    "mcp-atlassian"
   ]
 }

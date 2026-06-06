@@ -30,8 +30,42 @@ A Claude Code plugin marketplace for Dev Mesh — AI-powered integration across 
 | Tool | Install |
 |---|---|
 | Node.js (LTS) | https://nodejs.org |
-| `AZURE_DEVOPS_EXT_PAT` env var | Code (Read) + Work Items (Read) + Pull Request Threads (Read) scopes |
-| Atlassian credentials | First run prompts automatically via `mcp__claude_ai_Atlassian__authenticate` |
+| Python + `uv` | https://docs.astral.sh/uv/getting-started/installation/ |
+
+## MCP setup
+
+This plugin requires two MCP servers defined in `.mcp.json`:
+
+| Server | Package | Purpose |
+|---|---|---|
+| `ado` | `@azure-devops/mcp` (npx) | Azure DevOps — work items, PRs, pipelines |
+| `mcp-atlassian` | `mcp-atlassian` (uvx) | Jira + Confluence |
+
+### Configuration
+
+Copy `.claude/settings.local.json.example` to `.claude/settings.local.json` and fill in your credentials:
+
+```jsonc
+// .claude/settings.local.json
+{
+  "env": {
+    "ADO_ORG": "your-ado-org",                         // ADO organisation slug
+    "JIRA_URL": "https://your-org.atlassian.net",
+    "JIRA_USERNAME": "you@example.com",
+    "JIRA_API_TOKEN": "<Atlassian API token>",          // https://id.atlassian.com/manage-profile/security/api-tokens
+    "CONFLUENCE_URL": "https://your-org.atlassian.net/wiki",
+    "CONFLUENCE_USERNAME": "you@example.com",
+    "CONFLUENCE_API_TOKEN": "<Atlassian API token>"
+  },
+  "enabledMcpjsonServers": ["ado", "mcp-atlassian"]
+}
+```
+
+`settings.local.json` is gitignored — never commit real tokens.
+
+### Verify both servers loaded
+
+After restarting Claude Code run `/mcp` — both `ado` and `mcp-atlassian` should show as connected.
 
 ## Structure
 
