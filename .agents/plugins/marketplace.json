@@ -1,0 +1,20 @@
+{
+  "name": "dev-mesh-plugin",
+  "interface": {
+    "displayName": "Dev Mesh"
+  },
+  "plugins": [
+    {
+      "name": "dev-mesh",
+      "source": {
+        "source": "local",
+        "path": "./plugins/dev-mesh"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Coding"
+    }
+  ]
+}

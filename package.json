@@ -1,0 +1,15 @@
+{
+  "name": "dev-mesh-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Claude Code plugin marketplace for Dev Mesh — ADO, Jira, and Confluence AI integration",
+  "scripts": {
+    "validate": "claude plugin validate .",
+    "lint:json": "find . -name '*.json' -not -path '*/node_modules/*' | xargs jq -e ."
+  },
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=18.0.0"
+  },
+  "keywords": ["claude-code", "plugin", "ado", "jira", "confluence"]
+}

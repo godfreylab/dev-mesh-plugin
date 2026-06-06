@@ -1,0 +1,13 @@
+{
+  "name": "dev-mesh-marketplace",
+  "description": "Internal Claude Code marketplace for Dev Mesh — AI-powered integration across Azure DevOps, Jira, and Confluence.",
+  "plugins": [
+    {
+      "name": "dev-mesh",
+      "source": "./plugins/dev-mesh",
+      "description": "AI-powered plugin that connects Azure DevOps, Jira, and Confluence: ticket analysis, solution design generation, and intelligent PR review.",
+      "category": "developer-productivity",
+      "tags": ["ado", "jira", "confluence", "pr-review", "solution-design"]
+    }
+  ]
+}

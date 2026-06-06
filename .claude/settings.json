@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    {
+      "name": "dev-mesh",
+      "source": "./plugins/dev-mesh"
+    }
+  ]
+}

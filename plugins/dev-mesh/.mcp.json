@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "ado": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@azure-devops/mcp", "<your-ado-org>"]
+    },
+    "atlassian": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@atlassian/mcp"]
+    }
+  }
+}
