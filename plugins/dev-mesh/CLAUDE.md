@@ -47,3 +47,4 @@ Skills write output to the directories listed below. Create them if they do not 
 | PR review reports | `reviews/` |
 | Standup summaries | `standups/` |
 | Sync reports | `sync-reports/` |
+| User Story status documents | `docs/` |
