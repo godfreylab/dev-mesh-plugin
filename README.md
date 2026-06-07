@@ -14,6 +14,9 @@ A Claude Code plugin marketplace for Dev Mesh — AI-powered integration across 
 /dm-analyze ADO:12345
 /dm-analyze NEXUS-456
 
+/dm-ado-item-status 12345
+/dm-ado-item-status https://dev.azure.com/<your-org>/<your-project>/_workitems/edit/12345
+
 /dm-design ADO:12345
 
 /dm-review https://dev.azure.com/<your-org>/<your-project>/_git/<repo>/pullrequest/789
@@ -25,6 +28,18 @@ A Claude Code plugin marketplace for Dev Mesh — AI-powered integration across 
 /dm-confluence-search "retry logic"
 ```
 
+### Skills
+
+| Skill | What it does |
+|---|---|
+| `/dm-analyze` | Fetch and analyze a ticket from ADO or Jira — title, acceptance criteria, child tasks, linked PRs, and a summary |
+| `/dm-ado-item-status` | Full status snapshot of an ADO User Story: story details, parent, related items, PRs, branches, and commits. Saves to `docs/[id]-[title]/[id]-status.md` |
+| `/dm-design` | Generate a solution design document from an ADO or Jira ticket |
+| `/dm-review` | Review a pull request with full ticket and Confluence context |
+| `/dm-standup` | Summarize your current sprint activity and PR status for standup |
+| `/dm-sync` | Cross-reference an ADO work item against its Jira counterpart |
+| `/dm-confluence-search` | Search Confluence for documentation related to current work |
+
 ## Prerequisites
 
 | Tool | Install |
@@ -34,12 +49,24 @@ A Claude Code plugin marketplace for Dev Mesh — AI-powered integration across 
 
 ## MCP setup
 
-This plugin requires two MCP servers defined in `.mcp.json`:
+This plugin requires the following MCP servers. Core servers are defined in `.mcp.json`; Microsoft 365 integrations are optional add-ons.
 
-| Server | Package | Purpose |
+### Core servers (`.mcp.json`)
+
+| Server | Package | Purpose | Source |
+|---|---|---|---|
+| `ado` | `@azure-devops/mcp` (npx) | Azure DevOps — work items, PRs, pipelines | [GitHub](https://github.com/microsoft/azure-devops-mcp) |
+| `mcp-atlassian` | `mcp-atlassian` (uvx) | Jira + Confluence | [GitHub](https://github.com/sooperset/mcp-atlassian) |
+| `CLI-Microsoft365` | `@pnp/cli-microsoft365-mcp-server` (npx) | Microsoft 365 CLI — run any `m365` command against Teams, SharePoint, Exchange, and more | [GitHub](https://github.com/pnp/cli-microsoft365) |
+
+### claude.ai remote integrations (optional)
+
+These are remote MCP servers provided by claude.ai. Enable them in **claude.ai → Settings → Integrations** — no local install required.
+
+| Integration | Tools provided | Purpose |
 |---|---|---|
-| `ado` | `@azure-devops/mcp` (npx) | Azure DevOps — work items, PRs, pipelines |
-| `mcp-atlassian` | `mcp-atlassian` (uvx) | Jira + Confluence |
+| **Microsoft 365** | `chat_message_search`, `outlook_email_search`, `sharepoint_search`, `outlook_calendar_search`, `find_meeting_availability` | Search Teams chats, Outlook mail/calendar, and SharePoint — read-only, uses your logged-in M365 identity |
+| **Microsoft Learn** | `microsoft_docs_search`, `microsoft_code_sample_search`, `microsoft_docs_fetch` | Search and fetch official Microsoft / Azure documentation and code samples |
 
 ### Configuration
 
