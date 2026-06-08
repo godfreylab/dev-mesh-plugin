@@ -7,6 +7,5 @@
     "CONFLUENCE_URL": "https://your-org.atlassian.net/wiki",
     "CONFLUENCE_USERNAME": "you@example.com",
     "CONFLUENCE_API_TOKEN": "<your-atlassian-api-token>"
-  },
-  "enabledMcpjsonServers": ["ado", "mcp-atlassian"]
+  }
 }
