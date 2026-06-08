@@ -9,6 +9,7 @@ An AI-powered Claude Code plugin that connects **Azure DevOps**, **Jira**, and *
 | `dm-analyze` skill | `skills/dm-analyze/` | Pull and analyze a ticket from ADO or Jira |
 | `dm-design` skill | `skills/dm-design/` | Generate a solution design doc from ticket context |
 | `dm-review` skill | `skills/dm-review/` | Review a PR with linked ticket + Confluence context |
+| `dm-ado-pr-review` skill | `skills/dm-ado-pr-review/` | AI code review on an ADO PR — posts inline comments directly on the PR |
 | `dm-standup` skill | `skills/dm-standup/` | Summarize recent work items and PRs for standup |
 | `dm-sync` skill | `skills/dm-sync/` | Cross-reference ADO ↔ Jira ↔ Confluence |
 | `dm-confluence-search` skill | `skills/dm-confluence-search/` | Search Confluence for docs relevant to current work |

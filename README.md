@@ -8,6 +8,19 @@ A Claude Code plugin marketplace for Dev Mesh — AI-powered integration across 
 |---|---|
 | `dev-mesh` | Ticket analysis, solution design generation, and intelligent PR review |
 
+## Installation
+
+### Claude Code
+
+Run these two commands inside Claude Code:
+
+```
+/plugin marketplace add godfreylab/dev-mesh-plugin
+/plugin install dev-mesh
+```
+
+Then restart Claude Code and run `/mcp` to verify the MCP servers are connected.
+
 ## Quick start
 
 ```
@@ -20,6 +33,8 @@ A Claude Code plugin marketplace for Dev Mesh — AI-powered integration across 
 /dm-design ADO:12345
 
 /dm-review https://dev.azure.com/<your-org>/<your-project>/_git/<repo>/pullrequest/789
+
+/dm-ado-pr-review https://dev.azure.com/<your-org>/<your-project>/_git/<repo>/pullrequest/789
 
 /dm-standup
 
@@ -36,6 +51,7 @@ A Claude Code plugin marketplace for Dev Mesh — AI-powered integration across 
 | `/dm-ado-item-status` | Full status snapshot of an ADO User Story: story details, parent, related items, PRs, branches, and commits. Saves to `docs/[id]-[title]/[id]-status.md` |
 | `/dm-design` | Generate a solution design document from an ADO or Jira ticket |
 | `/dm-review` | Review a pull request with full ticket and Confluence context |
+| `/dm-ado-pr-review` | AI code review on an ADO PR — posts inline comments directly on the PR |
 | `/dm-standup` | Summarize your current sprint activity and PR status for standup |
 | `/dm-sync` | Cross-reference an ADO work item against its Jira counterpart |
 | `/dm-confluence-search` | Search Confluence for documentation related to current work |
