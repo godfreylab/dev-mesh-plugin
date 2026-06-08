@@ -57,7 +57,7 @@ This plugin requires the following MCP servers. Core servers are defined in `.mc
 |---|---|---|---|
 | `ado` | `@azure-devops/mcp` (npx) | Azure DevOps — work items, PRs, pipelines | [GitHub](https://github.com/microsoft/azure-devops-mcp) |
 | `mcp-atlassian` | `mcp-atlassian` (uvx) | Jira + Confluence | [GitHub](https://github.com/sooperset/mcp-atlassian) |
-| `CLI-Microsoft365` | `@pnp/cli-microsoft365-mcp-server` (npx) | Microsoft 365 CLI — run any `m365` command against Teams, SharePoint, Exchange, and more | [GitHub](https://github.com/pnp/cli-microsoft365) |
+| `CLI-Microsoft365` | `@pnp/cli-microsoft365-mcp-server` (npx) | Microsoft 365 CLI — run any `m365` command against Teams, SharePoint, Exchange, and more | [GitHub](https://github.com/pnp/cli-microsoft365-mcp-server) |
 
 ### claude.ai remote integrations (optional)
 
