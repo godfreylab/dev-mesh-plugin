@@ -36,26 +36,33 @@ Then restart Claude Code and run `/mcp` to verify the MCP servers are connected.
 | Tool | Install |
 |---|---|
 | Node.js (LTS) | https://nodejs.org |
-| Azure CLI | https://learn.microsoft.com/en-us/cli/azure/install-azure-cli |
+| Python + `uv` | https://docs.astral.sh/uv/getting-started/installation/ |
 
 ## MCP setup
 
-This plugin requires the ADO MCP server defined in `.mcp.json`.
+MCP servers are defined in `.mcp.json`.
 
 | Server | Package | Purpose |
 |---|---|---|
 | `ado` | `@azure-devops/mcp` (npx) | Azure DevOps — work items, PRs, pipelines |
+| `mcp-atlassian` | `mcp-atlassian` (uvx) | Jira + Confluence |
+| `CLI-Microsoft365` | `@pnp/cli-microsoft365-mcp-server` (npx) | Microsoft 365 CLI |
 
 ### Configuration
 
-Copy `.claude/settings.local.json.example` to `.claude/settings.local.json` and fill in your values:
+Copy `.claude/settings.local.json.example` to `.claude/settings.local.json` and fill in your credentials:
 
 ```jsonc
 {
   "env": {
-    "ADO_ORG": "your-ado-org"
-  },
-  "enabledMcpjsonServers": ["ado"]
+    "ADO_ORG": "your-ado-org",
+    "JIRA_URL": "https://your-org.atlassian.net",
+    "JIRA_USERNAME": "you@example.com",
+    "JIRA_API_TOKEN": "<your-atlassian-api-token>",
+    "CONFLUENCE_URL": "https://your-org.atlassian.net/wiki",
+    "CONFLUENCE_USERNAME": "you@example.com",
+    "CONFLUENCE_API_TOKEN": "<your-atlassian-api-token>"
+  }
 }
 ```
 
