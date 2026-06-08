@@ -1,12 +1,16 @@
 {
-  "name": "dev-mesh-marketplace",
+  "name": "dev-mesh-plugin",
   "description": "Internal Claude Code marketplace for Dev Mesh — AI-powered integration across Azure DevOps, Jira, and Confluence.",
+  "owner": {
+    "github": "godfreylab",
+    "name": "Godfrey Huang"
+  },
   "plugins": [
     {
       "name": "dev-mesh",
       "source": "./plugins/dev-mesh",
       "description": "AI-powered plugin that connects Azure DevOps, Jira, and Confluence: ticket analysis, solution design generation, and intelligent PR review.",
-      "category": "developer-productivity",
+      "category": "Coding",
       "tags": ["ado", "jira", "confluence", "pr-review", "solution-design"]
     }
   ]

@@ -2,6 +2,10 @@
   "name": "dev-mesh",
   "version": "0.1.0",
   "description": "AI-powered mesh connecting Azure DevOps, Jira, and Confluence: analyze tickets, generate solution designs, and review PRs with full ticket context.",
+  "author": {
+    "name": "Godfrey Huang",
+    "github": "godfreylab"
+  },
   "repository": "https://github.com/godfreylab/dev-mesh-plugin",
   "keywords": ["ado", "jira", "confluence", "pr-review", "solution-design", "standup"]
 }
